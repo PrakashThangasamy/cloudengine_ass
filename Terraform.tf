@@ -54,7 +54,7 @@ resource "aws_instance" "flask_app" {
               sudo docker pull prakashthangasamy/flask-cloudengine
               
               # Run the container
-              sudo docker run -d -p 80:5000 prakashthangasamy/flask-cloudengine
+              sudo docker run -d -p 5000:5000 prakashthangasamy/flask-cloudengine
               
               # Ensure container runs on reboot
               echo "@reboot root docker start \$(docker ps -aq)" | sudo tee -a /etc/crontab
